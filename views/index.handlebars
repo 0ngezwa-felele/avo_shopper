@@ -1,1 +1,96 @@
-<h2>Best deals</h2>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style2.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- This content will take up 3/12 (or 1/4) of the container -->
+                <h1>Avo App</h1>
+                <h2>Best deals</h2>
+                <div class="deals">
+                    <div class="deal1">
+                        <h3>SHOPRITE</h3>
+                        <p>Avocado deal
+                            3 for R10
+                        </p>
+                        <form action="./shoprite" method="POST">
+                            <div class="button">
+                                <a href="/"><button type="submit" name="dealOne">BUY</button></a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="deal2">
+                        <h3>PICK'N PAY</h3>
+                        <p>Avocado deal
+                            5 for R30
+                        </p>
+                        <form action="./pnp" method="POST">
+                            <div class="button">
+                                <a href="/"><button type="submit" name="dealTwo">BUY</button></a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="deal3">
+                        <h3>SPAR</h3>
+                        <p>Avocado deal
+                            10 for R70
+                        </p>
+                        <form action="./spar" method="POST">
+                            <div class="button">
+                                <a href="/"><button type="submit" name="dealThree">BUY</button></a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="deal4">
+                        <h3>FOOD LOVER'S</h3>
+                        <p>Avocado deal
+                            4 for R30
+                        </p>
+                        <form action="./foodLovers" method="POST">
+                            <div class="button">
+                                <a href="/"><button type="submit" name="dealFour">BUY</button></a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="deal5">
+                        <h3>WOOLIES</h3>
+                        <p>Avocado deal
+                            5 for R50
+                        </p>
+                        <form action="./woolies" method="POST">
+                            <div class="button">
+                                <a href="/"><button type="submit" name="dealFive">BUY</button></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="field">
+                        <h3>Shops</h3>
+                    <select name="Shops" id="">
+                        <option value=""></option>
+                        <option>Shoprite</option>
+                        <option>Pick'n Pay</option>
+                        <option>Spar</option>
+                        <option>Food Lover's</option>
+                        <option>Woolworths</option>
+                    </select>
+                </div>
+
+                <!-- This content will take up 6/12 (or 1/2) of the container -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

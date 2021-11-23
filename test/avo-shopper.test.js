@@ -4,7 +4,7 @@ let AvoShopper = require("../avo-shopper");
 const Pool = pg.Pool;
 require('dotenv').config()
 
-const connectionString = process.env.DATABASE_URL || 'postgresql://avos:avos123@localhost:5432/avo_shopper';
+const connectionString = process.env.DATABASE_URL || 'postgresql://codex:pg123@localhost:5432/avocado';
 
 const pool = new Pool({
     connectionString
@@ -20,11 +20,12 @@ describe('The avo shopper', function () {
     it('should be able to create a shop', async function () {
 
         const avoShopper = AvoShopper(pool);
+        const shops = await avoShopper.listShops();
 
-		await avoShopper.createShop('Veggie Tales');
-		const shops = await await avoShopper.listShops();
+		await avoShopper.createShop('shoprite');
+		await avoShopper.listShops();
 
-        assert.equal('Veggie Tales', shops[0].name);
+        assert.deepEqual('shoprite', shops[0].shop_name);
     });
 
     it('should be able to return a list of all shops', async function () {
@@ -69,8 +70,8 @@ describe('The avo shopper', function () {
 
         const avoShopper = AvoShopper(pool);
 
-        const shopId1 = await avoShopper.createShop('Veggie Tales');
-        const shopId2 = await avoShopper.createShop('Veggie Max');
+        const shopId1 = await avoShopper.createShop('shoprite');
+        const shopId2 = await avoShopper.createShop('spar');
 
 		const createDeals = [
             avoShopper.createDeal(shopId1, 5, 38),
@@ -82,46 +83,46 @@ describe('The avo shopper', function () {
 		    avoShopper.createDeal(shopId1, 3, 32),
 		    avoShopper.createDeal(shopId1, 2, 28)];
 
-        await Promise.all(createDeals);
+        await avoShopper.createDeal(createDeals);
 
 		const topFiveDeals = await avoShopper.topFiveDeals();
 
-		assert.equal(5, topFiveDeals.length);
+		assert.deepEqual(5, topFiveDeals.length);
 
         const expectedDeals = [
             {
               "price": "28.00",
               "qty": 4,
-              "shop_name": "Veggie Tales",
+              "shop_name": "shoprite",
               "unit_price": "7.00",
             },
             {
               "price": "38.00",
               "qty": 5,
-              "shop_name": "Veggie Tales",
+              "shop_name": "pick'n Pay",
               "unit_price": "7.60",
             },
             {
               "price": "35.00",
               "qty": 4,
-              "shop_name": "Veggie Max",
+              "shop_name": "spar",
               "unit_price": "8.75"
             },
             {
               "price": "28.00",
               "qty": 3,
-              "shop_name": "Veggie Tales",
+              "shop_name": "foodLovers",
               "unit_price": "9.33"
             },
             {
               "price": "32.00",
               "qty": 3,
-              "shop_name": "Veggie Tales",
+              "shop_name": "woolies",
               "unit_price": "10.67"
             }
         ];
     
-		assert.deepStrictEqual(expectedDeals, topFiveDeals)
+		assert.deepStrictEqual(expectedDeals, topFiveDeals.length)
 
     });
 

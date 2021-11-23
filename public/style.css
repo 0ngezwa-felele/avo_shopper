@@ -6,5 +6,93 @@ body {
 
 .container{
 	margin: auto;
-	width: 80%;
-}
+	width: 70%;
+	background-color: crimson;
+	text-align: center;
+	justify-content: center;
+	align-content: center;
+	border: solid black;
+	border-radius: 25%;
+	background-image: linear-gradient(rgba(17, 110, 4, 0.8),rgba(6, 77, 4, 0.8)),url(./—Pngtree—cool\ technology\ sense\ information\ technology_1046698.jpg);
+	}
+	.deal1{
+		margin: 2%;
+		width: 25%;
+		background-color: crimson;
+		text-align: center;
+		justify-content: center;
+		align-content: center;
+		border: solid black;
+		border-radius: 25%;
+		background-image: linear-gradient(rgba(30, 160, 13, 0.8),rgba(122, 214, 119, 0.8)),url(./—Pngtree—cool\ technology\ sense\ information\ technology_1046698.jpg);
+		
+	}
+	.deal2{
+		margin: 2%;
+		width: 25%;
+		background-color: crimson;
+		text-align: center;
+		justify-content: center;
+		align-content: center;
+		border: solid black;
+		border-radius: 25%;
+		background-image: linear-gradient(rgba(30, 160, 13, 0.8),rgba(122, 214, 119, 0.8)),url(./—Pngtree—cool\ technology\ sense\ information\ technology_1046698.jpg);
+		
+	}
+	.deal3{
+		margin: 2%;
+		width: 25%;
+		background-color: crimson;
+		text-align: center;
+		justify-content: center;
+		align-content: center;
+		border: solid black;
+		border-radius: 25%;
+		background-image: linear-gradient(rgba(30, 160, 13, 0.8),rgba(122, 214, 119, 0.8)),url(./—Pngtree—cool\ technology\ sense\ information\ technology_1046698.jpg);
+		
+	}
+	.deal4{
+		margin: 2%;
+		width: 25%;
+		background-color: crimson;
+		text-align: center;
+		justify-content: center;
+		align-content: center;
+		border: solid black;
+		border-radius: 25%;
+		background-image: linear-gradient(rgba(30, 160, 13, 0.8),rgba(122, 214, 119, 0.8)),url(./—Pngtree—cool\ technology\ sense\ information\ technology_1046698.jpg);
+		
+	}.deal5{
+		margin: 2%;
+		width: 25%;
+		background-color: crimson;
+		text-align: center;
+		justify-content: center;
+		align-content: center;
+		border: solid black;
+		border-radius: 25%;
+		background-image: linear-gradient(rgba(30, 160, 13, 0.8),rgba(122, 214, 119, 0.8)),url(./—Pngtree—cool\ technology\ sense\ information\ technology_1046698.jpg);
+		
+	}
+	.deals{
+		display: flex;
+	}
+	.button button{
+			width: 90px;
+			margin: auto;
+			height: 30px;
+			background-color:whitesmoke;
+			border: 1px solid wheat;
+			color: black;
+			outline: none;
+			transition: .6s ease;
+			border-radius: 25px;
+			
+		}
+	
+	
+	
+	
+	
+	
+	

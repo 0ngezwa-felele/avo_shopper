@@ -1,7 +1,7 @@
 module.exports = function(pool) {
 
 	async function createShop(shopName) {
-		const result = await pool.query(`insert into shop (name) values ($1) returning id`, [shopName]);
+		const result = await pool.query(`insert into shop (shop_name) values ($1) returning id`, [shopName]);
 		if (result.rowCount === 1) {
 			return result.rows[0].id;
 		}
@@ -19,13 +19,13 @@ module.exports = function(pool) {
 	}
 
 	async function topFiveDeals() {
-		const bestPriceSQL = `select name as shop_name, price, qty, round((price/qty), 2) as unit_price from avo_deal 
+		const bestPriceSQL = `select shop_name as shop_name, price, qty, round((price/qty), 2) as unit_price from avo_deal 
 		join shop on shop.id = avo_deal.shop_id 
 		order by (price/qty) asc 
 		limit 5`
 
 		const result = await pool.query(bestPriceSQL);
-		return result.rows;
+		return result.rowCount;
 
 	}
 

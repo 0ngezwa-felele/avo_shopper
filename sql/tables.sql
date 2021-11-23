@@ -1,6 +1,6 @@
 create table shop(
 	id serial not null primary key,
-	name text not null unique
+	shop_name text not null unique
 );
 
 create table avo_deal (
